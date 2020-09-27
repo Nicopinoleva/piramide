@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	Start
+{% endblock %}
+
+{% block content %}
+	<div class="col-8 mt-5">
+		<form class="form-inline justify-content-center" method="post">
+			{% csrf_token %}
+			{% for field in form %}
+				<div class="mx-3">
+					{{ field.label}}
+					{{ field }}
+				</div>
+			{% endfor %}
+			<button type="submit" class= "btn btn-outline-success">AddPlayer</button>
+		</form>
+	</div>
+{% endblock %}

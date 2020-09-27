@@ -1,0 +1,7 @@
+11/09/2020 15:01:17 [11739] Initializing admin  V1.00.10
+11/09/2020 15:01:17 [11739] Log filename  : ./admin10010_2009.log
+11/09/2020 15:01:17 [11739] Crypt messages: yes
+11/09/2020 15:01:17 [11739] Config file   : /mnt/etc/admin.conf
+11/09/2020 15:01:17 [11739] Bus timeout   : 120
+11/09/2020 15:01:17 [11739] Max retries   : 3
+11/09/2020 15:01:39 [11739] ServConnect: Connected 4 to 'Bus'

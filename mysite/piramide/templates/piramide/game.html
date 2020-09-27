@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	Game
+{% endblock %}
+
+{% block content %}
+	<h1>Piramide!</h1>
+	<div class="fixed-bottom">
+		<ul class="list-group list-group-horizontal mt-5">
+			{% for player in PlayerList %}
+				<li class="list-group-item">{{ player.name }}</li>
+			{% endfor %}
+		</ul>
+	</div>
+{% endblock %}

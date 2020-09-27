@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	Piramide
+{% endblock %}
+
+{% block content %}
+	<div class="col-8 mt-5">
+		<form class="form-inline justify-content-center" method="post">
+			{% csrf_token %}
+			{% for field in form %}
+				<div class="mx-3">
+					{{ field.label}}
+					{{ field }}
+				</div>
+			{% endfor %}
+			<button type="submit" class= "btn btn-outline-success">AddPlayer</button>
+			{% if Error_player|length > 0 %}
+				<div class="alert alert-danger">
+						ERROR El nombre {{ Error_player }} ya existe
+				</div>
+			{% endif %}
+		</form>
+	</div>
+	<div class="col-5 mt-5">
+		{% for player in PlayerList %}
+			<div class="card mb-1">
+				<div class="card-body">
+					{{ player.name }}
+				<a type="button" class="close float-right" href="{% url 'delete_player_url' game_id=newGame.id player_name=player.name %}">
+						<span aria-hidden="true">&times;</span>
+				</a>
+				</div>
+			</div>
+		{% endfor %}
+		{% if PlayerList|length > 3 %}
+			<a type="button" class="btn btn-success" href="{% url 'start_game_url' game_id=newGame.id %}">Start Game
+			</a>
+		{% endif %}
+	</div>
+{% endblock %}
